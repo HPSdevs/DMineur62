@@ -1,0 +1,87 @@
+//body {background-image: url("../images/fond.jpg"); background-repeat: no-repeat;background-size: containt;}
+.game { display: flex;flex-direction: column;align-items: center;justify-content: flex-start;flex-wrap: nowrap;
+       max-width:600px;margin-left:auto;margin-right:auto;  border-radius: 10px;border: 2px solid #898a88;
+       background-color:#e7e5e5; padding: 10px;box-shadow: inset 3px 3px 5px white;
+
+       .fondtitle{display: flex;width:100%;max-width:600px;min-height: 80px; background-color:#88d66c;align-items: center;
+              border-top-left-radius: 10px; border-top-right-radius: 10px; border: 4px solid #b4e380;
+       
+              .title { text-align: center;  font-weight: 400;  font-size:.9em; margin-top: 5px;width:100%;flex-direction: column;}
+              h6 {font-size: .5em;margin-top: 0px;margin-bottom: 3%;}
+              span {font-family: "Lemon", serif;  font-size: 1.2em; color:rgb(255, 255, 255);}
+     
+       }
+
+       .niveaux {display: flex;width: 60%;max-width:200px;justify-content: space-between;align-items: center;color:white; font-weight: 100; 
+              span { width:100%;text-align: center;  font-size: small;color:rgb(222, 243, 222);text-shadow: 0px 0px 5px #000,0px 0px 5px #000 ;}
+              }       
+       .redraw{ display:none}
+       .champ{
+              display:flex;
+              gap: 1px;
+              Justify-content: flex-start;
+              flex-direction: column;
+              align-items: center;  
+              font-size:small;
+              width: 90%;
+              max-width: 580px;
+              ul{
+                     display: flex;
+
+                     flex-direction: row;
+                     justify-content: flex-start;
+                     gap: 1px;
+              }
+              
+              li{
+                     display:flex;
+                     width: calc(9vw);
+                     height: calc(9vw);
+                     max-width: 55px;
+                     max-height: 55px;
+                     justify-content: center;
+                     align-items: center;
+                     color:#16530a;font-weight: 500; font-family: "Lemon", serif;text-shadow: 0px 0px 5px #FFFFFF
+              }
+       }
+       .fondinfo { z-index:200;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 50, 0.5);  display: flex;justify-content: center;align-items: center;}
+       .info  { z-index: 212;display: flex;background-color: rgb(58, 240, 119);position: absolute;border-radius: 15px;
+                border: 5px solid rgba(1, 31, 5, 0.699);color: yellow; text-shadow: 0px 1px 5px #000,0px 1px 5px #000;
+                max-width: 400px;width:100%;height: 200px;justify-content: center;align-items: center;box-shadow: 0px 5px 15px black;
+                font-family: "Lemon", serif;  font-size:x-large;position:absolute; top:25%;flex-direction: column;
+                span { font-size: 12px;color:black;font-family: "Lemon", serif; text-shadow: none;}
+              }
+       .icons { width:100%; height:100%}
+       .coming{ animation: bouh 5s ease-out infinite;}
+       .encours {  filter: brightness(110%); border: 4px outset #d7da22; }
+       .tools { width:100%; }
+       .tool  { width:80px;height:70px}
+       .toolimage {position:relative; top:-7px; left:0px;opacity: .8 ;}
+       .toolflag  {position:relative; top:-7px; left:-10px;opacity: .9 ;}
+       .tooltext  {position:relative; top:-45px; left:10px;text-align: right; font-size: 12px;}
+       .herbe {  background-color: rgba(144, 238, 144, 0.90)}
+       .terre {  background-color: rgba(173, 101, 6, 0.438)}
+       .flag  {  background-color:rgba(144, 238, 144, 0.90)}
+
+
+       button { background-color: #edf9fd;box-shadow: #19520e 0px 2px 3px;border:0px solid;
+                padding: 1em;font-size:.8em; text-transform: uppercase;transition: 0.2;
+                box-shadow: white inset 1px 1px 5px, #bcda9a inset  5px 5px 15px, black 2px 2px 5px, rgba(0, 0, 0, 0.4) 0px 6px 3px;
+
+              &.top {border-top-left-radius: 15px; border-top-right-radius: 15px; width:80px; height:35px; display: block;border-bottom: 2px solid grey;}
+              &.dwn {border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; width:80px; height:35px;border-top: 2px solid lightgoldenrodyellow;}
+              &.all {border-radius: 15px;}
+              button:hover {  opacity: 1;}
+              button:disabled {  filter: blur(4px);}
+       }
+       .niveau {font-size: 14px;font-weight: 600; text-shadow: rgba(0, 0, 0, 0.8) 0px -1px 1px; color: rgb(161, 157, 157);}
+       .ledtext{ color: rgb(93, 155, 87);font-size: 20px; width:100%;padding-left:2%;flex-direction: column;align-content: flex-start;font-family: "VT323", monospace;}     
+       .ledinfo{color: rgb(93, 155, 87);font-size: 40px; width:100%;padding-left:2%;flex-direction: column;align-content: flex-start; font-family: "VT323", monospace;}  
+       .ledlvi{color: rgb(93, 155, 87);font-size: 16px; font-family: "VT323", monospace;position: relative; top: -50px; left:145px}  
+       .ledlvl{color: rgb(93, 155, 87);font-size: 48px; font-family: "VT323", monospace;position: relative; top: -60px; left:145px}  
+       .ledligne{ display:flex; flex-direction: column;  justify-content: flex-start; align-items: flex-start; width:100%}   
+       }
+
+       @keyframes bouh   { 0% {transform: scale(.6);} 50% {transform: scale(.9);} 100% { transform: scale(.6);}}
+       @keyframes used   { 0% {transform: rotate(-3deg); box-shadow: 0 2px 2px rgba(0,0,0,.2);} 20% {transform: rotate(20deg);} 40% {transform: rotate(-15deg);} 60% {transform: rotate(5deg);} 90% {transform: rotate(-1deg);} 100% {transform: rotate(0);box-shadow: 0 2px 2px rgba(0,0,0,.2);}}
+

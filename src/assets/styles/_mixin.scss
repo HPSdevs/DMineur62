@@ -1,0 +1,10 @@
+@mixin smart {
+  @media (max-width: 619px) {
+    @content;
+  }
+}
+@mixin pc {
+  @media (min-width: 620px) {
+    @content;
+  }
+}
