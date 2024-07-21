@@ -78,7 +78,6 @@ export default function App() {
       }
   }
   function dostart(){
-    console.log ("⚠️DO START")
     chgbuttonDisabled(true);
     initialisation();
     handleTool(0);
@@ -87,14 +86,12 @@ export default function App() {
     setStatus(1);
   }
   function DoRESET(){
-    console.log ("⚠️DO RESET")
     setStatus(0);
     chgbuttonDisabled(false);
     initialisation();
     handleTool(0);
   }
   function DoSTOP(x){
-    console.log ("⚠️DO STOP")
     setStatus(x);
     endtools();
     chgbuttonDisabled(false);
@@ -112,7 +109,6 @@ export default function App() {
   }
   /////////////////////////////////////////////
   function initialisation(){
-    console.log ("⚠️init")
     const surface = taille**2;                                              // nombre de cases
     const nbm = Math.floor(surface*niveau/20);                              // % de mines par rapport aux cases + alea
     setNbflag(nbm);                                                         // nombre de drapeau disponible
