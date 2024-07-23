@@ -1,5 +1,5 @@
 //
-//   ReactMineur projet DWWM ©2024 HPSdevs, 15/07/24-18/07/24
+//   ReactMineur² projet DWWM ©2024 HPSdevs, 15/07/24-22/07/24
 //
 // IMPORT MODE
 import { useState,useEffect} from "react";
@@ -66,18 +66,19 @@ export default function App() {
   function redraw(){
     setredraw (Math.random()*1000 )
   }
+
   // base start/stop
   function handleStart(){
     switch (status) {
       case 0:     // START
         dostart();
         break;
-      default:  // STOP/RESET/WIN/LOSE
+      default:    // STOP/RESET/WIN/LOSE
         DoSTOP(0);
         break;
       }
   }
-  function dostart(){
+  function dostart(){      // groupement cmds to…
     chgbuttonDisabled(true);
     initialisation();
     handleTool(0);
@@ -97,6 +98,7 @@ export default function App() {
     endtools();
     chgbuttonDisabled(false);
   }
+  
   // handle des boutons des outils, niveaux
   function handleTool(x){
     let a=1-x;
@@ -108,7 +110,7 @@ export default function App() {
   function handleNiveau(x){
     setNiveau((niveau)=> ( (niveau===1 && x<0)? niveau : (niveau===9 && x>0) ? niveau : niveau+x));
   }
-  function endtools(){    // End of Effect
+  function endtools(){    // End of visual Effect
     setTool(0);
     document.getElementById(`tool0`).classList.remove("encours"); 
     document.getElementById(`tool1`).classList.remove("encours");
