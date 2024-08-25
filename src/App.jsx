@@ -1,5 +1,5 @@
 //
-//   ReactMineur² projet DWWM ©2024 HPSdevs, 15/07/24-22/07/24
+//   ReactMineur² projet DWWM ©2024 HPSdevs, 15/07/24-24/07/24
 //
 // IMPORT MODE
 import { useState,useEffect} from "react";
@@ -135,7 +135,7 @@ export default function App() {
           x= Number(Math.floor( Math.random()*taille));
           y= Number(Math.floor( Math.random()*taille));
           c= field[y][x].terre;
-        } while (c==="mine")      // ne pas mettre une mine là ou il y en a déjà une ! sinon BOOOM!!!!
+        } while (c==="mine")      // ne pas mettre une mine là ou il y en a déjà une ! 
         autour.forEach((pos)=>{   //  si ok alors faire de suite l'entourage de valeurs
           const xx = x+pos[0]<0 ? "OUT" : x+pos[0]>(taille-1) ? "OUT" : x+pos[0];
           const yy = y+pos[1]<0 ? "OUT" : y+pos[1]>(taille-1) ? "OUT" : y+pos[1];
@@ -259,7 +259,7 @@ export default function App() {
   }
   function Hms() {
     const sec =  gametimer;
-    let heures   = Math.floor(sec / 3600); 
+    let heures  = Math.floor(sec / 3600); 
     let minutes = Math.floor((sec - (heures * 3600)) / 60); 
     let secondes= Math.floor(sec - (heures * 3600) - (minutes * 60)); 
     if (heures    < 10) {heures   = "0"+heures;}
