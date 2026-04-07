@@ -334,7 +334,7 @@ export default function App() {
           <div className="title">
             <h1>DMineur²&nbsp;62</h1>
             <h6>
-              <span>©2024 by HPSdevs [Maj:02/03/2026]</span>
+              <span>©2024 by HPSdevs [Maj:07/04/2026]</span>
             </h6>
           </div>
           <img className="help" src={help} onClick={() => setGamehelp(true)} />
