@@ -1,5 +1,5 @@
 //
-//   ReactMineur² projet DWWM ©2024 HPSdevs, 15/07/24-24/07/24
+//   ReactMineur² projet DWWM ©2024 HPSdevs, 15/07/24-10/04/26
 //
 // IMPORT MODE
 import { useState, useEffect } from "react";
@@ -56,7 +56,8 @@ export default function App() {
   // INIT
   useEffect(() => {
     initialisation();
-  }, []); // juste pour avoir le champ affiché dès le lancement
+  }, [niveau]); // juste pour avoir le champ affiché dès le lancement
+
   useEffect(() => {
     // timer du jeu
     const reviens = setInterval(() => runningtime(), 1000);
@@ -131,6 +132,7 @@ export default function App() {
   }
   ///////////////////////////////////////////// LE JEU
   function initialisation() {
+    setTaille(10); // il fallait au moins l'utiliser une fois
     const surface = taille ** 2; // nombre de cases
     const nbm = Math.floor((surface * niveau) / 20); // % de mines par rapport aux cases + alea
     setNbflag(nbm); // nombre de drapeau disponible
@@ -284,7 +286,7 @@ export default function App() {
         <div className="info" onClick={() => DoRESET()}>
           <h3>VOUS AVEZ GAGNÉ</h3>le niveau {niveau}
           <h6>en {gametimer} secondes</h6>
-          <span>copie l'écran et partage ton super score !</span>
+          <span>copie l&apos;écran et partage ton super score !</span>
         </div>
       </div>
     );
